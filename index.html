@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ladle Tracking Portal</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>Ladle Tracking Portal</h1>
+    </header>
+
+    <div class="section-container">
+        <section class="ladle-info">
+            <h2>Ladle Information</h2>
+            <p>Ladle Number: <span id="ladle-number">12345</span></p>
+            <p>Location: <span id="ladle-location">TLC Pit Area</span></p>
+            <p>Status: <span id="ladle-status">In Transit</span></p>
+        </section>
+
+        <section class="statistics">
+            <h2>Statistics</h2>
+            <p>Ladle Circulation Time: <span id="circulation-time">12 hours</span></p>
+            <p>Ladle Life: <span id="ladle-life">6 months</span></p>
+            <p>Ladle Turnaround Time: <span id="turnaround-time">2 days</span></p>
+        </section>
+
+        <section class="admin">
+            <h2>Admin Part</h2>
+            <form id="admin-form">
+                <label for="ladle-number-input">Ladle Number:</label>
+                <input type="text" id="ladle-number-input" required>
+                <label for="ladle-location-input">Location:</label>
+                <input type="text" id="ladle-location-input" required>
+                <label for="ladle-status-input">Status:</label>
+                <input type="text" id="ladle-status-input" required>
+                <button type="submit">Update</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Ladle Tracking Portal</p>
+    </footer>
+
+    <script>
+        // JavaScript code for handling admin updates
+        const adminForm = document.getElementById("admin-form");
+
+        adminForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const ladleNumber = document.getElementById("ladle-number-input").value;
+            const ladleLocation = document.getElementById("ladle-location-input").value;
+            const ladleStatus = document.getElementById("ladle-status-input").value;
+
+            // Send data to the server for updating
+            // You need to implement the server-side logic for this part
+
+            // For now, update the frontend for demonstration purposes
+            document.getElementById("ladle-number").textContent = ladleNumber;
+            document.getElementById("ladle-location").textContent = ladleLocation;
+            document.getElementById("ladle-status").textContent = ladleStatus;
+
+            // Clear the form inputs
+            adminForm.reset();
+        });
+    </script>
+</body>
+
+</html>
